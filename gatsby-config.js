@@ -17,6 +17,13 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-etsy",
+      options: {
+        key: "<YOUR_API_KEY_HERE>",
+        q: "yellow flowers",
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
