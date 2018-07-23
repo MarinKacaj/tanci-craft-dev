@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby starter ecommerce',
-    author: 'Parminder Sanghera',
-    description: 'A starter e-commerce site made using Gatsby.',
-    siteUrl: 'https://parmsang.github.io/gatsby-starter-ecommerce/',
+    title: 'Tanci Craft',
+    author: 'Marin Kacaj',
+    description: 'Handicraft traditional products from Albania and Greece',
+    siteUrl: 'http://tanci-craft-dev.surge.sh',
   },
   pathPrefix: '/gatsby-starter-ecommerce',
   plugins: [

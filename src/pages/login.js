@@ -7,35 +7,41 @@ import {
   Button,
   Segment,
   Message,
+  TextArea
 } from 'semantic-ui-react'
 import Helmet from 'react-helmet'
-import { login } from '../../lib/moltin'
-import AuthContext from '../components/Context/AuthContext'
 
 export default class Login extends React.Component {
   state = {
     email: '',
-    password: '',
+    subject: '',
+    message: '',
     loading: false,
     errors: null,
   }
 
-  _handleSubmit = (e, context) => {
+  _handleSubmit = (e) => {
     e.preventDefault()
 
-    const { email, password } = this.state
+    const stateCopy = this.state
+    const { email, subject, message } = stateCopy
 
     this.setState({
       loading: true,
       errors: null,
     })
 
-    login({ email, password })
+    fetch(`https://formspree.io/m93_vkacaj@yahoo.com`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: Object.keys(stateCopy)
+          .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(stateCopy[k])}`)
+          .join('&')
+      })
       .then(({ id, token }) => {
-        localStorage.setItem('customerToken', token)
-        localStorage.setItem('mcustomer', id)
-        context.updateToken()
-        navigateTo('/myaccount/')
+        navigateTo('/')
       })
       .catch(e => {
         console.log(e.message)
@@ -55,7 +61,7 @@ export default class Login extends React.Component {
         <Message
           error
           header="Sorry"
-          content="Please check your login details and try again."
+          content="Please check your message details and try again."
         />
       )
     }
@@ -68,52 +74,59 @@ export default class Login extends React.Component {
     const { loading, errors } = this.state
 
     return (
-      <AuthContext.Consumer>
-        {context => (
-          <React.Fragment>
-            <Helmet title="Login" />
-            <Header as="h1">Log in to your account</Header>
+      <React.Fragment>
+        <Helmet title="Contact us" />
+        <Header as="h1">Send us a message</Header>
+        <Form
+          onSubmit={e => this._handleSubmit(e)}
+          loading={loading}
+          error={!!errors}
+        >
+          {errors ? this.handleErrors(errors) : null}
+          <Segment>
+            <Form.Field>
+              <label htmlFor="email">Email</label>
+              <Input
+                id="email"
+                fluid
+                name="email"
+                type="email"
+                autoFocus
+                onChange={e => this._handleChange(e)}
+                required
+              />
+            </Form.Field>
 
-            <Form
-              onSubmit={e => this._handleSubmit(e, context)}
-              loading={loading}
-              error={!!errors}
-            >
-              {errors ? this.handleErrors(errors) : null}
-              <Segment>
-                <Form.Field>
-                  <label htmlFor="email">Email</label>
-                  <Input
-                    id="email"
-                    fluid
-                    name="email"
-                    type="email"
-                    autoFocus
-                    onChange={e => this._handleChange(e)}
-                    required
-                  />
-                </Form.Field>
+            <Form.Field>
+              <label htmlFor="subject">Subject</label>
+              <Input
+                id="subject"
+                fluid
+                name="subject"
+                type="text"
+                required
+                onChange={e => this._handleChange(e)}
+              />
+            </Form.Field>
 
-                <Form.Field>
-                  <label htmlFor="password">Password</label>
-                  <Input
-                    id="password"
-                    fluid
-                    name="password"
-                    type="password"
-                    required
-                    onChange={e => this._handleChange(e)}
-                  />
-                </Form.Field>
+            <Form.Field>
+              <label htmlFor="message">Message</label>
+              <TextArea 
+                id="message"
+                fluid
+                name="message"
+                type="text"
+                required
+                onChange={e => this._handleChange(e)}
+              />
+            </Form.Field>
 
-                <Button type="submit" color="orange">
-                  Login
-                </Button>
-              </Segment>
-            </Form>
-          </React.Fragment>
-        )}
-      </AuthContext.Consumer>
+            <Button type="submit" color="orange">
+              Send
+            </Button>
+          </Segment>
+        </Form>
+      </React.Fragment>
     )
   }
 }
