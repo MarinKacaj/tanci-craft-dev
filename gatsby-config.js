@@ -16,13 +16,13 @@ module.exports = {
         products: ['main_image', 'brands', 'files', 'categories'],
       },
     },
-    {
+    /*{
       resolve: "gatsby-source-etsy",
       options: {
-        key: "<YOUR_API_KEY_HERE>",
+        api_key: "<YOUR_API_KEY_HERE>",
         q: "yellow flowers",
       },
-    },
+    },*/
     {
       resolve: `gatsby-source-filesystem`,
       options: {

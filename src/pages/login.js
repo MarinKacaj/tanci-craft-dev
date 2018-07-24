@@ -1,5 +1,4 @@
 import React from 'react'
-import { navigateTo } from 'gatsby-link'
 import {
   Header,
   Form,
@@ -7,9 +6,10 @@ import {
   Button,
   Segment,
   Message,
-  TextArea
+  TextArea,
 } from 'semantic-ui-react'
 import Helmet from 'react-helmet'
+import { withPrefix } from 'gatsby-link'
 
 export default class Login extends React.Component {
   state = {
@@ -20,9 +20,7 @@ export default class Login extends React.Component {
     errors: null,
   }
 
-  _handleSubmit = (e) => {
-    e.preventDefault()
-
+  _handleSubmit = e => {
     const stateCopy = this.state
     const { email, subject, message } = stateCopy
 
@@ -31,25 +29,11 @@ export default class Login extends React.Component {
       errors: null,
     })
 
-    fetch(`https://formspree.io/m93_vkacaj@yahoo.com`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: Object.keys(stateCopy)
-          .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(stateCopy[k])}`)
-          .join('&')
-      })
-      .then(({ id, token }) => {
-        navigateTo('/')
-      })
-      .catch(e => {
-        console.log(e.message)
-        this.setState({
-          loading: false,
-          errors: e.errors || e,
-        })
-      })
+    const errors = this.state.errors
+    this.setState({ loading: false })
+    if (Array.isArray(errors) && errors.length > 0) {
+      e.preventDefault()
+    }
   }
 
   _handleChange = ({ target: { name, value } }) =>
@@ -79,6 +63,8 @@ export default class Login extends React.Component {
         <Header as="h1">Send us a message</Header>
         <Form
           onSubmit={e => this._handleSubmit(e)}
+          method="POST"
+          action="https://formspree.io/m93_vkacaj@yahoo.com"
           loading={loading}
           error={!!errors}
         >
@@ -109,11 +95,19 @@ export default class Login extends React.Component {
               />
             </Form.Field>
 
+            <Form.Field hidden>
+              <Input
+                type="hidden"
+                name="_next"
+                value={withPrefix('contact-thanks')}
+              />
+            </Form.Field>
+
             <Form.Field>
               <label htmlFor="message">Message</label>
-              <TextArea 
+              <TextArea
                 id="message"
-                fluid
+                fluid="true"
                 name="message"
                 type="text"
                 required
