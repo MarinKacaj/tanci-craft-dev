@@ -11,7 +11,7 @@ import {
 import Helmet from 'react-helmet'
 import { withPrefix } from 'gatsby-link'
 
-export default class Login extends React.Component {
+export default class ContactUs extends React.Component {
   state = {
     email: '',
     subject: '',

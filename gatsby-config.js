@@ -16,19 +16,19 @@ module.exports = {
         products: ['main_image', 'brands', 'files', 'categories'],
       },
     },
-    /*{
-      resolve: "gatsby-source-etsy",
-      options: {
-        api_key: "<YOUR_API_KEY_HERE>",
-        q: "yellow flowers",
-      },
-    },*/
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
       },
+    },
+    {
+      resolve: 'gatsby-source-facebook',
+      options: {
+        key: 'EAAPaeSmp1x8BAMNjFCZBZA6XyUUO9d0Og3iZAM9Pqbz9DYJQYtz3ZBkPMCHBkAcux0E4XfIZBZCl7BjR3h8TUWWcKQTZBw8VTP0DGZBGZBJ1hr5piRBYn3EDiiE40LHohMKgTZAmk80zKeHyvAPr8kWQWT95YVg0IC4rhgHKRlfXYeKY6UNgcX0Y0iSDLiYFAEn0oZD',
+        places: ['marin.kacaj']
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',

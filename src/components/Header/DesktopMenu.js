@@ -45,8 +45,8 @@ class DesktopMenu extends Component {
             </Menu.Item>
             <Menu.Item
               as={Link}
-              to="/login/"
-              active={activeItem === withPrefix('/login/')}
+              to="/contact-us/"
+              active={activeItem === withPrefix('/contact-us/')}
             >
               Contact
             </Menu.Item>
