@@ -17,18 +17,17 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-etsy',
+      options: {
+        api_key: '5r5zqtaejknkt5yuwkumw5y3'
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
         name: 'pages',
       },
-    },
-    {
-      resolve: 'gatsby-source-facebook',
-      options: {
-        key: 'EAAPaeSmp1x8BAMNjFCZBZA6XyUUO9d0Og3iZAM9Pqbz9DYJQYtz3ZBkPMCHBkAcux0E4XfIZBZCl7BjR3h8TUWWcKQTZBw8VTP0DGZBGZBJ1hr5piRBYn3EDiiE40LHohMKgTZAmk80zKeHyvAPr8kWQWT95YVg0IC4rhgHKRlfXYeKY6UNgcX0Y0iSDLiYFAEn0oZD',
-        places: ['marin.kacaj']
-      }
     },
     {
       resolve: 'gatsby-source-filesystem',
@@ -83,3 +82,13 @@ module.exports = {
     'gatsby-plugin-react-next',
   ],
 }
+
+/*
+{
+      resolve: 'gatsby-source-facebook',
+      options: {
+        key: 'EAAPaeSmp1x8BAGGyHaLEL3eXuZCrS77YdXgC0t6GTJJcZCIrBmHmKyO3k5rUMC2A3WfhWezgaJHq62Y7WA68QXJZCUXiANGP8NZAXTyAb3kJC2sZCDWCHfFn6rh5ZBH6xijNF9HCh73diDztCDdpEB2b3VB0UJ23nwIlIJtFKAkxpZALH9bI6axcRb0xDvkmbkZD',
+        places: ['1862596497096207', 'posts']
+      }
+    },
+    */
