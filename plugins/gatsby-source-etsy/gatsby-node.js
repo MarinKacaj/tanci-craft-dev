@@ -51,23 +51,29 @@ exports.sourceNodes = (
       // Process the JSON data into a node
       .then(data => {
         // dummy
-        data.results = [{
-          listing_id: 1234,
-          state: 'active',
-          category_id: 567,
-          title: 'Test Listing 1',
-          description: 'This is test listing 1',
-          price: '5',
-          currency_code: 'EUR',
-          quantity: 1,
-          sku: 'abcdef',
-          MainImage: {
-            url_fullxfull: 'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
-            url_75x75: 'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
-            url_170x135: 'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
-            url_570xN: 'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg'
-          }
-        }]
+        data.results = [
+          {
+            listing_id: 1234,
+            state: 'active',
+            category_id: 567,
+            title: 'Test Listing 1',
+            description: 'This is test listing 1',
+            price: '5',
+            currency_code: 'EUR',
+            quantity: 1,
+            sku: 'abcdef',
+            MainImage: {
+              url_fullxfull:
+                'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
+              url_75x75:
+                'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
+              url_170x135:
+                'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
+              url_570xN:
+                'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
+            },
+          },
+        ]
         data.count = data.results.length
         // For each query result (or 'hit')
         data.results.forEach(etsyListing => {

@@ -57,7 +57,7 @@
     "dev": "gatsby develop",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write \"src/**/*.{js,jsx}\" \"plugins/**/*.{js,jsx}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx}\" \"plugins/**/*.{js,jsx}\" \"./*.{js,jsx}\"",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
