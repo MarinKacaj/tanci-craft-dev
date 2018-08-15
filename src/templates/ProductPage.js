@@ -7,18 +7,19 @@ import ProductAttributes from '../components/ProductAttributes'
 
 class ProductPageTemplate extends React.PureComponent {
   render() {
-    const productInfo = get(this, 'props.data.allMoltinProduct')
+    const productInfo = get(this, 'props.data.allEtsyListing')
     const data = productInfo.edges[0].node
+    const title = data.title
     const slug = data.slug
-    const image = get(data, 'includedData.main_image.link.href')
+    const description = data.description;
+    const image = get(data, 'MainImage.url_fullxfull')
     const sizes = get(data, 'mainImage.childImageSharp.sizes')
     const product = {
       ...data,
       id: data.originalId,
       image,
       mainImage: data.mainImage,
-      header: data.name,
-      meta: data.meta,
+      header: data.title,
       sku: data.sku,
     }
 
@@ -26,7 +27,10 @@ class ProductPageTemplate extends React.PureComponent {
 
     return (
       <div>
-        <Helmet title={slug} />
+        <Helmet>
+          <title>{title}</title>
+          <meta name="description" content="{description}" />
+        </Helmet>
         <ProductSummary {...product} />
         <ProductAttributes {...product} />
       </div>
@@ -37,29 +41,28 @@ class ProductPageTemplate extends React.PureComponent {
 export default ProductPageTemplate
 
 export const pageQuery = graphql`
-  query ProductsQuery($originalId: String!) {
-    allMoltinProduct(filter: { originalId: { eq: $originalId } }) {
+  query ProductsQuery($listing_id: Int!) {
+    allEtsyListing(filter: { listing_id: { eq: $listing_id } }) {
       edges {
         node {
-          originalId
-          name
+          listing_id
+          title
           description
-          meta {
-            display_price {
-              with_tax {
-                amount
-                currency
-                formatted
-              }
-            }
+          price
+          currency_code
+          sku
+          slug
+          materials
+          processing_min
+          processing_max
+
+          MainImage {
+            url_fullxfull
+            url_75x75
+            url_170x135
+            url_570xN
           }
-          includedData {
-            main_image {
-              link {
-                href
-              }
-            }
-          }
+
           mainImage {
             childImageSharp {
               sizes(maxWidth: 400) {
@@ -67,14 +70,6 @@ export const pageQuery = graphql`
               }
             }
           }
-          slug
-          material
-          max_watt
-          bulb_qty
-          bulb
-          new
-          sku
-          finish
         }
       }
     }

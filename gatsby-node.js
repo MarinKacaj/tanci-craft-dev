@@ -13,10 +13,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       graphql(
         `
           {
-            allMoltinProduct {
+            allEtsyListing {
               edges {
                 node {
-                  originalId
+                  listing_id
                 }
               }
             }
@@ -28,12 +28,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           reject(result.errors)
         }
 
-        result.data.allMoltinProduct.edges.forEach(edge => {
+        result.data.allEtsyListing.edges.forEach(edge => {
           createPage({
-            path: `/product/${edge.node.originalId}/`,
+            path: `/product/${edge.node.listing_id}/`,
             component: productPageTemplate,
             context: {
-              originalId: edge.node.originalId,
+              listing_id: edge.node.listing_id,
             },
           })
         })

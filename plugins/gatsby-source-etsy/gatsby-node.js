@@ -56,24 +56,28 @@ exports.sourceNodes = (
             listing_id: 1234,
             state: 'active',
             category_id: 567,
-            title: 'Test Listing 1',
-            description: 'This is test listing 1',
+            title: 'Etsy Listing M',
+            description: 'This is a very nice handmade pillow',
             price: '5',
             currency_code: 'EUR',
             quantity: 1,
             sku: 'abcdef',
+            processing_min: 10,
+            processing_max: 11,
+            materials: ['wool', 'cotton'],
             MainImage: {
               url_fullxfull:
-                'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
+                'https://ae01.alicdn.com/kf/HTB1A._ZKVXXXXcjXFXXq6xXFXXXu/sofa-pillow-decorative-pillows-stuffed-fabric-handmade-cushion-pillow-circle-at-home-fabric-rainbow-pumpkin.jpg',
               url_75x75:
-                'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
+                'https://ae01.alicdn.com/kf/HTB1A._ZKVXXXXcjXFXXq6xXFXXXu/sofa-pillow-decorative-pillows-stuffed-fabric-handmade-cushion-pillow-circle-at-home-fabric-rainbow-pumpkin.jpg',
               url_170x135:
-                'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
+                'https://ae01.alicdn.com/kf/HTB1A._ZKVXXXXcjXFXXq6xXFXXXu/sofa-pillow-decorative-pillows-stuffed-fabric-handmade-cushion-pillow-circle-at-home-fabric-rainbow-pumpkin.jpg',
               url_570xN:
-                'https://img2.cgtrader.com/items/203614/f6eb4f9155/large/mig-29-fulcrum-russian-airforce-3d-model-low-poly-max-obj-c4d.jpg',
+                'https://ae01.alicdn.com/kf/HTB1A._ZKVXXXXcjXFXXq6xXFXXXu/sofa-pillow-decorative-pillows-stuffed-fabric-handmade-cushion-pillow-circle-at-home-fabric-rainbow-pumpkin.jpg',
             },
           },
         ]
+        data.results.forEach((listing) => listing['slug'] = listing.title.toLowerCase().replace(/\s/g, '-'))
         data.count = data.results.length
         // For each query result (or 'hit')
         data.results.forEach(etsyListing => {

@@ -22,7 +22,7 @@ export default ({ listing_id, title, price, currency_code, sku, mainImage }) => 
           <Label>SKU: {sku}</Label>
         </Item.Description>
         <Item.Extra>
-          <AddToCart productId={id} />
+          <AddToCart productId={listing_id} />
         </Item.Extra>
       </Item.Content>
     </Item>
