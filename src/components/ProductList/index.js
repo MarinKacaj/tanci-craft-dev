@@ -30,7 +30,7 @@ const mapProductsToItems = products =>
             />
           </Image>
         ),
-        header: 'Crown',
+        header: title,
         meta: <Card.Meta style={{ color: 'dimgray' }}>{price} {currency_code}</Card.Meta>,
       }
     }
