@@ -1,6 +1,7 @@
 const crypto = require('crypto')
 const fetch = require('node-fetch')
 const queryString = require('query-string')
+const dummyData = require('./dummy-data.json')
 
 // https://www.gatsbyjs.org/docs/source-plugin-tutorial/
 
@@ -51,34 +52,7 @@ exports.sourceNodes = (
       // Process the JSON data into a node
       .then(data => {
         // dummy
-        data.results = [
-          {
-            listing_id: 1234,
-            state: 'active',
-            category_id: 567,
-            title: 'Etsy Listing M',
-            description: 'This is a very nice handmade pillow',
-            price: '5',
-            currency_code: 'EUR',
-            quantity: 1,
-            sku: 'abcdef',
-            processing_min: 10,
-            processing_max: 11,
-            materials: ['wool', 'cotton'],
-            url:
-              'https://www.etsy.com/listing/386098194/push-pin-travel-map-world-travels-map',
-            MainImage: {
-              url_fullxfull:
-                'https://ae01.alicdn.com/kf/HTB1A._ZKVXXXXcjXFXXq6xXFXXXu/sofa-pillow-decorative-pillows-stuffed-fabric-handmade-cushion-pillow-circle-at-home-fabric-rainbow-pumpkin.jpg',
-              url_75x75:
-                'https://ae01.alicdn.com/kf/HTB1A._ZKVXXXXcjXFXXq6xXFXXXu/sofa-pillow-decorative-pillows-stuffed-fabric-handmade-cushion-pillow-circle-at-home-fabric-rainbow-pumpkin.jpg',
-              url_170x135:
-                'https://ae01.alicdn.com/kf/HTB1A._ZKVXXXXcjXFXXq6xXFXXXu/sofa-pillow-decorative-pillows-stuffed-fabric-handmade-cushion-pillow-circle-at-home-fabric-rainbow-pumpkin.jpg',
-              url_570xN:
-                'https://ae01.alicdn.com/kf/HTB1A._ZKVXXXXcjXFXXq6xXFXXXu/sofa-pillow-decorative-pillows-stuffed-fabric-handmade-cushion-pillow-circle-at-home-fabric-rainbow-pumpkin.jpg',
-            },
-          },
-        ]
+        data.results = dummyData.results
         data.results.forEach(
           listing =>
             (listing['slug'] = listing.title.toLowerCase().replace(/\s/g, '-'))

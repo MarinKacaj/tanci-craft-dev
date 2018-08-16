@@ -11,6 +11,7 @@ class StoreIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const etsyListings = get(this, 'props.data.allEtsyListing.edges')
+    console.log(etsyListings)
     return (
       <div>
         <Helmet title={siteTitle} />
