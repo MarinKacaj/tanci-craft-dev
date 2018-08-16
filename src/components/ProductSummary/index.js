@@ -5,24 +5,39 @@ import { Item, Label } from 'semantic-ui-react'
 
 import AddToCart from '../AddToCart'
 
-export default ({ id, name, meta, sku, mainImage }) => (
+export default ({
+  listing_id,
+  title,
+  price,
+  currency_code,
+  sku,
+  url,
+  mainImage,
+}) => (
   <Item.Group>
     <Item style={{ alignItems: 'center' }}>
       <Item.Image size="medium">
         <Img
           style={{ width: '250px' }}
           sizes={mainImage.childImageSharp.sizes}
-          alt={name}
+          alt={title}
         />
       </Item.Image>
       <Item.Content>
-        <Item.Header>{name}</Item.Header>
+        <Item.Header>{title}</Item.Header>
         <Item.Description>
-          <p>{meta.display_price.with_tax.formatted}</p>
+          <p>
+            {price} {currency_code}
+          </p>
           <Label>SKU: {sku}</Label>
         </Item.Description>
         <Item.Extra>
-          <AddToCart productId={id} />
+          <AddToCart productId={listing_id} />
+        </Item.Extra>
+        <Item.Extra>
+          <a target="_blank" href={url}>
+            Buy on Etsy
+          </a>
         </Item.Extra>
       </Item.Content>
     </Item>

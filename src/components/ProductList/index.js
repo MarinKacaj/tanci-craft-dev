@@ -5,39 +5,29 @@ import Link from 'gatsby-link'
 
 const mapProductsToItems = products =>
   products.map(
-    ({
-      node: {
-        name,
-        originalId,
-        meta,
-        mainImage,
-        background_colour,
-        new: isNew,
-      },
-    }) => {
-      const price = meta.display_price.with_tax.formatted || null
+    ({ node: { title, listing_id, price, currency_code, mainImage } }) => {
+      const formattedPrice = `${price} ${currency_code}`
       return {
         as: Link,
-        to: `/product/${originalId}/`,
-        childKey: originalId,
+        to: `/product/${listing_id}/`,
+        childKey: listing_id,
         image: (
           <Image>
-            {isNew ? (
-              <Label color="red" ribbon style={{ zIndex: '1' }}>
-                New!
-              </Label>
-            ) : null}
             <Img
               sizes={mainImage.childImageSharp.sizes}
-              alt={name}
+              alt={title}
               style={{
-                background: `${background_colour || '#fafafa'}`,
+                background: '#fafafa',
               }}
             />
           </Image>
         ),
-        header: name,
-        meta: <Card.Meta style={{ color: 'dimgray' }}>{price}</Card.Meta>,
+        header: title,
+        meta: (
+          <Card.Meta style={{ color: 'dimgray' }}>
+            {price} {currency_code}
+          </Card.Meta>
+        ),
       }
     }
   )

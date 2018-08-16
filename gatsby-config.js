@@ -1,19 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby starter ecommerce',
-    author: 'Parminder Sanghera',
-    description: 'A starter e-commerce site made using Gatsby.',
-    siteUrl: 'https://parmsang.github.io/gatsby-starter-ecommerce/',
+    title: 'Tanci Craft',
+    author: 'Marin Kacaj',
+    description: 'Handicraft traditional products from Albania and Greece',
+    siteUrl: 'http://tanci-craft-dev.surge.sh',
   },
   pathPrefix: '/gatsby-starter-ecommerce',
   plugins: [
     {
-      resolve: 'gatsby-source-moltin',
+      resolve: 'gatsby-source-etsy',
       options: {
-        key:
-          process.env.MOLTIN_CLIENT_ID ||
-          'j6hSilXRQfxKohTndUuVrErLcSJWP15P347L6Im0M4',
-        products: ['main_image', 'brands', 'files', 'categories'],
+        api_key: '5r5zqtaejknkt5yuwkumw5y3',
       },
     },
     {
@@ -76,3 +73,13 @@ module.exports = {
     'gatsby-plugin-react-next',
   ],
 }
+
+/*
+{
+      resolve: 'gatsby-source-facebook',
+      options: {
+        key: 'EAAPaeSmp1x8BAGGyHaLEL3eXuZCrS77YdXgC0t6GTJJcZCIrBmHmKyO3k5rUMC2A3WfhWezgaJHq62Y7WA68QXJZCUXiANGP8NZAXTyAb3kJC2sZCDWCHfFn6rh5ZBH6xijNF9HCh73diDztCDdpEB2b3VB0UJ23nwIlIJtFKAkxpZALH9bI6axcRb0xDvkmbkZD',
+        places: ['1862596497096207', 'posts']
+      }
+    },
+    */

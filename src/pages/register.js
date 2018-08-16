@@ -35,7 +35,7 @@ export default class Register extends React.Component {
         localStorage.setItem('customerToken', token)
         localStorage.setItem('mcustomer', id)
         context.updateToken()
-        navigateTo('/myaccount/')
+        navigateTo('/')
       })
       .catch(e => {
         console.log(e)

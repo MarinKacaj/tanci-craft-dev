@@ -10,19 +10,16 @@ import logo from '../images/ill-short-dark.svg'
 class StoreIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const products = get(this, 'props.data.allMoltinProduct.edges')
-    const filterProductsWithoutImages = products.filter(
-      v => v.node.includedData.main_image
-    )
+    const etsyListings = get(this, 'props.data.allEtsyListing.edges')
     return (
       <div>
         <Helmet title={siteTitle} />
         <Header as="h3" icon textAlign="center" style={{ marginBottom: '2em' }}>
           <Header.Content style={{ width: '60%', margin: '0 auto' }}>
-            <Image src={logo} alt={'logo'}/>
+            <Image src={logo} alt={'logo'} />
           </Header.Content>
         </Header>
-        <ProductList products={filterProductsWithoutImages} />
+        <ProductList products={etsyListings} />
       </div>
     )
   }
@@ -37,12 +34,40 @@ export const pageQuery = graphql`
         title
       }
     }
+    allEtsyListing {
+      edges {
+        node {
+          listing_id
+          title
+          description
+          price
+          currency_code
+          sku
+
+          MainImage {
+            url_fullxfull
+            url_75x75
+            url_170x135
+            url_570xN
+          }
+
+          mainImage {
+            childImageSharp {
+              sizes(maxWidth: 600) {
+                ...GatsbyImageSharpSizes
+              }
+            }
+          }
+        }
+      }
+    }
     allMoltinProduct {
       edges {
         node {
           originalId
           name
           description
+
           background_colour
           new
           meta {

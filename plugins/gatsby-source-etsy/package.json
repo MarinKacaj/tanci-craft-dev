@@ -1,15 +1,16 @@
 {
-  "name": "gatsby-source-moltin",
+  "name": "gatsby-source-etsy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gatsby-node.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "query-string": "^6.1.0",
-    "@moltin/sdk": "^3.10.0"
+    "node-fetch": "^2.2.0",
+    "query-string": "^6.1.0"
   }
 }
