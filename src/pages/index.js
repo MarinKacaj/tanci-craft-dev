@@ -61,41 +61,5 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMoltinProduct {
-      edges {
-        node {
-          originalId
-          name
-          description
-
-          background_colour
-          new
-          meta {
-            display_price {
-              with_tax {
-                amount
-                currency
-                formatted
-              }
-            }
-          }
-          includedData {
-            main_image {
-              id
-              link {
-                href
-              }
-            }
-          }
-          mainImage {
-            childImageSharp {
-              sizes(maxWidth: 600) {
-                ...GatsbyImageSharpSizes
-              }
-            }
-          }
-        }
-      }
-    }
   }
 `
