@@ -11,7 +11,7 @@ class ProductPageTemplate extends React.PureComponent {
     const data = productInfo.edges[0].node
     const title = data.title
     const slug = data.slug
-    const description = data.description;
+    const description = data.description
     const image = get(data, 'MainImage.url_fullxfull')
     const sizes = get(data, 'mainImage.childImageSharp.sizes')
     const product = {

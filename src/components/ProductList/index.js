@@ -5,15 +5,7 @@ import Link from 'gatsby-link'
 
 const mapProductsToItems = products =>
   products.map(
-    ({
-      node: {
-        title,
-        listing_id,
-        price,
-        currency_code,
-        mainImage,
-      },
-    }) => {
+    ({ node: { title, listing_id, price, currency_code, mainImage } }) => {
       const formattedPrice = `${price} ${currency_code}`
       return {
         as: Link,
@@ -31,7 +23,11 @@ const mapProductsToItems = products =>
           </Image>
         ),
         header: title,
-        meta: <Card.Meta style={{ color: 'dimgray' }}>{price} {currency_code}</Card.Meta>,
+        meta: (
+          <Card.Meta style={{ color: 'dimgray' }}>
+            {price} {currency_code}
+          </Card.Meta>
+        ),
       }
     }
   )

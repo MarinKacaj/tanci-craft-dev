@@ -42,28 +42,20 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   })
 }
 
-const internalTypeToMainImage = {
-  MoltinProduct: 'includedData.main_image.link.href',
-  EtsyListing: 'MainImage.url_fullxfull',
-}
-
 exports.onCreateNode = async ({ node, boundActionCreators, cache, store }) => {
   const { createNode } = boundActionCreators
   let fileNode
 
-  if (node.internal) {
-    const mainImagePath = internalTypeToMainImage[node.internal.type]
-    if (mainImagePath) {
-      const mainImageHref = get(node, mainImagePath)
+  if (node.internal && node.internal.type === `EtsyListing`) {
+    const mainImageHref = get(node, 'MainImage.url_fullxfull')
 
-      fileNode = await createRemoteFileNode({
-        url: mainImageHref,
-        store,
-        cache,
-        createNode,
-      })
-      if (fileNode && fileNode.id) node.mainImage___NODE = fileNode.id
-    }
+    fileNode = await createRemoteFileNode({
+      url: mainImageHref,
+      store,
+      cache,
+      createNode,
+    })
+    if (fileNode && fileNode.id) node.mainImage___NODE = fileNode.id
   }
 }
 

@@ -8,15 +8,6 @@ module.exports = {
   pathPrefix: '/gatsby-starter-ecommerce',
   plugins: [
     {
-      resolve: 'gatsby-source-moltin',
-      options: {
-        key:
-          process.env.MOLTIN_CLIENT_ID ||
-          'j6hSilXRQfxKohTndUuVrErLcSJWP15P347L6Im0M4',
-        products: ['main_image', 'brands', 'files', 'categories'],
-      },
-    },
-    {
       resolve: 'gatsby-source-etsy',
       options: {
         api_key: '5r5zqtaejknkt5yuwkumw5y3',

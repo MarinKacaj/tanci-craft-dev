@@ -1,12 +1,7 @@
 import React from 'react'
 import { Header, Divider, Table } from 'semantic-ui-react'
 
-export default ({
-  description,
-  materials,
-  processing_min,
-  processing_max,
-}) => (
+export default ({ description, materials, processing_min, processing_max }) => (
   <div>
     <Header as="h3">About this product</Header>
     <p>{description}</p>
@@ -27,7 +22,12 @@ export default ({
         </Table.Row>
         <Table.Row>
           <Table.Cell>Ready in</Table.Cell>
-          <Table.Cell>{(processing_min != processing_max) ? `${processing_min} - ${processing_max}` : `${processing_min}`} day(s)</Table.Cell>
+          <Table.Cell>
+            {processing_min != processing_max
+              ? `${processing_min} - ${processing_max}`
+              : `${processing_min}`}{' '}
+            day(s)
+          </Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>

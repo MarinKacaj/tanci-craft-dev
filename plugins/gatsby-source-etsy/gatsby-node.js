@@ -65,7 +65,8 @@ exports.sourceNodes = (
             processing_min: 10,
             processing_max: 11,
             materials: ['wool', 'cotton'],
-            url: 'https://www.etsy.com/listing/386098194/push-pin-travel-map-world-travels-map',
+            url:
+              'https://www.etsy.com/listing/386098194/push-pin-travel-map-world-travels-map',
             MainImage: {
               url_fullxfull:
                 'https://ae01.alicdn.com/kf/HTB1A._ZKVXXXXcjXFXXq6xXFXXXu/sofa-pillow-decorative-pillows-stuffed-fabric-handmade-cushion-pillow-circle-at-home-fabric-rainbow-pumpkin.jpg',
@@ -78,7 +79,10 @@ exports.sourceNodes = (
             },
           },
         ]
-        data.results.forEach((listing) => listing['slug'] = listing.title.toLowerCase().replace(/\s/g, '-'))
+        data.results.forEach(
+          listing =>
+            (listing['slug'] = listing.title.toLowerCase().replace(/\s/g, '-'))
+        )
         data.count = data.results.length
         // For each query result (or 'hit')
         data.results.forEach(etsyListing => {
