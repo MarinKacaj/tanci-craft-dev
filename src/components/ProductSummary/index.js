@@ -5,7 +5,7 @@ import { Item, Label } from 'semantic-ui-react'
 
 import AddToCart from '../AddToCart'
 
-export default ({ listing_id, title, price, currency_code, sku, mainImage }) => (
+export default ({ listing_id, title, price, currency_code, sku, url, mainImage }) => (
   <Item.Group>
     <Item style={{ alignItems: 'center' }}>
       <Item.Image size="medium">
@@ -23,6 +23,9 @@ export default ({ listing_id, title, price, currency_code, sku, mainImage }) => 
         </Item.Description>
         <Item.Extra>
           <AddToCart productId={listing_id} />
+        </Item.Extra>
+        <Item.Extra>
+          <a target="_blank" href={url}>Buy on Etsy</a>
         </Item.Extra>
       </Item.Content>
     </Item>

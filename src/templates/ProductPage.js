@@ -55,6 +55,7 @@ export const pageQuery = graphql`
           materials
           processing_min
           processing_max
+          url
 
           MainImage {
             url_fullxfull
