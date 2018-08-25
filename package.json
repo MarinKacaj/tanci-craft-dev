@@ -12,6 +12,7 @@
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-google-analytics": "^1.0.29",
     "gatsby-plugin-manifest": "^1.0.27",
+    "gatsby-plugin-netlify-cms": "^2.0.1",
     "gatsby-plugin-nprogress": "^1.0.14",
     "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-react-helmet": "^1.0.8",
@@ -22,6 +23,7 @@
     "gatsby-source-filesystem": "^1.5.31",
     "gatsby-transformer-sharp": "^1.6.22",
     "lodash": "^4.17.5",
+    "netlify-cms": "^2.0.10",
     "react-headroom": "^2.2.2",
     "react-stripe-checkout": "^2.6.3",
     "semantic-ui-css": "^2.3.1",
@@ -43,7 +45,9 @@
     "regenerator-runtime": "^0.11.1"
   },
   "homepage": "https://github.com/parmsang/gatsby-starter-ecommerce",
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
@@ -54,12 +58,10 @@
     "dev": "gatsby develop",
     "lint": "eslint **/*.{js,jsx} --quiet",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format":
-      "prettier --write \"src/**/*.{js,jsx,json}\" \"plugins/**/*.{js,jsx,json}\" \"./*.{js,jsx,json}\"",
+    "format": "prettier --write \"src/**/*.{js,jsx,json}\" \"plugins/**/*.{js,jsx,json}\" \"./*.{js,jsx,json}\"",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "fix-semi":
-      "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }
 }
