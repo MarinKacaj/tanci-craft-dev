@@ -10,7 +10,6 @@ import {
 } from 'semantic-ui-react'
 import Helmet from 'react-helmet'
 import AuthContext from '../components/Context/AuthContext'
-import { register } from '../../lib/moltin'
 
 export default class Register extends React.Component {
   state = {
@@ -29,21 +28,6 @@ export default class Register extends React.Component {
     this.setState({
       loading: true,
     })
-    register({ name, email, password })
-      .then(data => {
-        const { id, token } = data
-        localStorage.setItem('customerToken', token)
-        localStorage.setItem('mcustomer', id)
-        context.updateToken()
-        navigateTo('/')
-      })
-      .catch(e => {
-        console.log(e)
-        this.setState({
-          loading: false,
-          errors: e.errors || e,
-        })
-      })
   }
 
   _handleChange = ({ target: { name, value } }) =>

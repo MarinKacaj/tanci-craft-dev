@@ -2,8 +2,6 @@ import React from 'react'
 import { Input, Icon, Transition } from 'semantic-ui-react'
 import CartContext from '../Context/CartContext'
 
-const Moltin = require('../../../lib/moltin')
-
 export default class AddToCart extends React.Component {
   state = {
     error: '',
@@ -23,26 +21,6 @@ export default class AddToCart extends React.Component {
       this.setState({
         loading: true,
       })
-
-      Moltin.addToCart(cartId, productId, quantity)
-        .then(() => {
-          context.addToCart(quantity, cartId)
-
-          this.setState(
-            {
-              loading: false,
-              quantity: 1,
-              visible: true,
-            },
-            this.toggleMessage()
-          )
-        })
-        .catch(() =>
-          this.setState({
-            error: 'Something went wrong',
-            loading: false,
-          })
-        )
     }
   }
 
