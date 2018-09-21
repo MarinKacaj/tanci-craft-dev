@@ -1,6 +1,6 @@
 backend:
-  name: bitbucket
-  repo: MarinKacaj/tanci-craft
+  name: github
+  repo: MarinKacaj/tanci-craft-dev
   branch: netlify
 
 media_folder: static/assets
