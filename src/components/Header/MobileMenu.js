@@ -147,7 +147,11 @@ class MobileMenu extends Component {
                   Blog
                 </StyledLink>
                 <StyledDivider key={2} />
-                <StyledLink to="/contact-us/" onClick={this.handleClose} key={3}>
+                <StyledLink
+                  to="/contact-us/"
+                  onClick={this.handleClose}
+                  key={3}
+                >
                   Contact
                 </StyledLink>
               </StyledContainer>

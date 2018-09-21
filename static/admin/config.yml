@@ -1,6 +1,7 @@
 backend:
-  name: test-repo
-  repo: erquhart/gatsby-netlify-cms-example 
+  name: bitbucket
+  repo: MarinKacaj/tanci-craft
+  branch: netlify
 
 media_folder: static/assets
 public_folder: assets

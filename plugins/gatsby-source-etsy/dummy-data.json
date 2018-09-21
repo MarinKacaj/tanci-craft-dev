@@ -122,12 +122,10 @@
       "MainImage": {
         "url_fullxfull":
           "http://ejka.ru/uploads/images/8/d/b/2/498/f54bf97d05.jpg",
-        "url_75x75":
-          "http://ejka.ru/uploads/images/8/d/b/2/498/f54bf97d05.jpg",
+        "url_75x75": "http://ejka.ru/uploads/images/8/d/b/2/498/f54bf97d05.jpg",
         "url_170x135":
           "http://ejka.ru/uploads/images/8/d/b/2/498/f54bf97d05.jpg",
-        "url_570xN":
-          "http://ejka.ru/uploads/images/8/d/b/2/498/f54bf97d05.jpg"
+        "url_570xN": "http://ejka.ru/uploads/images/8/d/b/2/498/f54bf97d05.jpg"
       }
     }
   ]

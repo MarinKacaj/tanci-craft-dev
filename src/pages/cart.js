@@ -11,8 +11,7 @@ export default class Cart extends React.Component {
     completed: false,
   }
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   _handleCheckout = data => {
     const cartId = localStorage.getItem('mcart')

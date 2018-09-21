@@ -9,6 +9,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
   return new Promise((resolve, reject) => {
     const productPageTemplate = path.resolve('src/templates/ProductPage.js')
+    const blogPostTemplate = path.resolve('src/templates/blogTemplate.js')
+    
     resolve(
       graphql(
         `
@@ -17,6 +19,23 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               edges {
                 node {
                   listing_id
+                }
+              }
+            }
+            allMarkdownRemark(
+              sort: { order: DESC, fields: [frontmatter___date] }
+              limit: 1000
+            ) {
+              edges {
+                node {
+                  excerpt(pruneLength: 250)
+                  html
+                  id
+                  frontmatter {
+                    date
+                    path
+                    title
+                  }
                 }
               }
             }
@@ -35,6 +54,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             context: {
               listing_id: edge.node.listing_id,
             },
+          })
+        })
+
+        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+          createPage({
+            path: node.frontmatter.path,
+            component: blogPostTemplate,
+            context: {},
           })
         })
       })
