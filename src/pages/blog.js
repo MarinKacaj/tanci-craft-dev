@@ -5,12 +5,13 @@ import get from 'lodash/get'
 import { Image, Header } from 'semantic-ui-react'
 import Helmet from 'react-helmet'
 import ProductList from '../components/ProductList'
+import PostList from '../components/PostList'
 import logo from '../images/ill-short-dark.svg'
 
-class StoreIndex extends React.Component {
+class PostIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const etsyListings = get(this, 'props.data.allEtsyListing.edges')
+    const posts = get(this, 'props.data.allMarkdownRemark.edges')
     return (
       <div>
         <Helmet title={siteTitle} />
@@ -19,47 +20,33 @@ class StoreIndex extends React.Component {
             <Image src={logo} alt={'logo'} />
           </Header.Content>
         </Header>
-        <ProductList products={etsyListings} />
+        <PostList posts={posts} />
       </div>
     )
   }
 }
 
-export default StoreIndex
+export default PostIndex
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query PostsQuery {
     site {
       siteMetadata {
         title
       }
     }
-    allEtsyListing {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          listing_id
-          title
-          description
-          price
-          currency_code
-          sku
-
-          MainImage {
-            url_fullxfull
-            url_75x75
-            url_170x135
-            url_570xN
+          frontmatter {
+            path
+            date(formatString: "Do MMMM YYYY")
+            title
           }
-
-          mainImage {
-            childImageSharp {
-              sizes(maxWidth: 600) {
-                ...GatsbyImageSharpSizes
-              }
-            }
-          }
+          excerpt(pruneLength: 235)
+          html
         }
       }
     }
-  }
+}
 `

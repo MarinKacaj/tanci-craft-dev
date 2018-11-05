@@ -143,7 +143,7 @@ class MobileMenu extends Component {
                   {`Shopping Cart ${cartCount ? cartCount : ''}`}
                 </StyledLink>
                 <StyledDivider />
-                <StyledLink to="/register/" onClick={this.handleClose} key={1}>
+                <StyledLink to="/blog/" onClick={this.handleClose} key={1}>
                   Blog
                 </StyledLink>
                 <StyledDivider key={2} />

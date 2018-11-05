@@ -38,8 +38,8 @@ class DesktopMenu extends Component {
           <Menu.Menu position="right">
             <Menu.Item
               as={Link}
-              to="/register/"
-              active={activeItem === withPrefix('/register/')}
+              to="/blog/"
+              active={activeItem === withPrefix('/blog/')}
             >
               Blog
             </Menu.Item>
