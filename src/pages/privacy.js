@@ -9,7 +9,7 @@ const Privacy = () => (
       Generic Privacy Policy template
 
 Privacy Policy
-Last updated: \(30th of December 2018\)
+Last updated: 30th of December 2018
 Tanci Craft \(\"us\", \"we\", or \"our\"\) operates http://tanci-craft-dev.netlify.com \(the
 \"Site\"\). This page informs you of our policies regarding the collection, use and disclosure of
 Personal Information we receive from users of the Site.
