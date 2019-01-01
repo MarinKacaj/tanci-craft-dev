@@ -15,9 +15,7 @@ const Terms = () => (
     <br />
     <address>
       Rruga Endri Keko Tirana, Tirana
-      <br />
       Albania - 1005, Albania
-      <br />
     </address>
   </div>
 );
