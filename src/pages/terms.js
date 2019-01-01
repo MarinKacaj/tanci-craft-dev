@@ -9,9 +9,9 @@ const Terms = () => (
     <p>
       These terms and conditions outline the rules and regulations for the use
       of Tanci Craft's Website.
-    </p>{" "}
+    </p>
     <br />
-    <span style="text-transform: capitalize;"> Tanci Craft</span> is located at:
+    <span style="text-transform: capitalize;">Tanci Craft</span> is located at:
     <br />
     <address>
       Rruga Endri Keko Tirana, Tirana
@@ -205,7 +205,7 @@ const Terms = () => (
     <p>
       If you are among the organizations listed in paragraph 2 above and are
       interested in linking to our website, you must notify us by sending an
-      e-mail to{" "}
+      e-mail to
       <a
         href="mailto:ildadule@gmail.com"
         title="send an email to ildadule@gmail.com"
@@ -308,13 +308,13 @@ const Terms = () => (
     <p />
     <h2>Credit & Contact Information</h2>
     <p>
-      This Terms and conditions page was created at{" "}
+      This Terms and conditions page was created at
       <a
         style="color:inherit;text-decoration:none;cursor:text;"
         href="https://termsandconditionstemplate.com"
       >
         termsandconditionstemplate.com
-      </a>{" "}
+      </a>
       generator. If you have any queries regarding any of our terms, please
       contact us.
     </p>
