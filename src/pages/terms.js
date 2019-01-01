@@ -35,10 +35,10 @@ const Terms = () => (
       necessary to undertake the process of our assistance to the Client in the
       most appropriate manner, whether by formal meetings of a fixed duration,
       or any other means, for the express purpose of meeting the Client’s needs
-      in respect of provision of the Company’s stated services&#47;products, in
+      in respect of provision of the Company’s stated services or products, in
       accordance with and subject to, prevailing law of Albania. Any use of the
       above terminology or other words in the singular, plural, capitalisation
-      and&#47;or he&#47;she or they, are taken as interchangeable and therefore as
+      and or he or she or they, are taken as interchangeable and therefore as
       referring to same.
     </p>
     
