@@ -10,9 +10,7 @@ const Terms = () => (
       These terms and conditions outline the rules and regulations for the use
       of Tanci Craft's Website.
     </p>
-    <br />
     <span style="text-transform: capitalize;">Tanci Craft</span> is located at:
-    <br />
     <p>
       By accessing this website we assume you 
     </p>
