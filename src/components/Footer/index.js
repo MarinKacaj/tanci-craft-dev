@@ -54,7 +54,7 @@ const Footer = () => (
                 icon="instagram"
                 content={
                   <a href="https://www.instagram.com/tanci_craft/" alt="instagram link">
-                    Email
+                    Instagram
                   </a>
                 }
               />
