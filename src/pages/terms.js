@@ -11,14 +11,6 @@ const Terms = () => (
       of Tanci Craft's Website.
     </p>
     <br />
-    <span style="text-transform: capitalize;">Tanci Craft</span> is located at:
-    <br />
-    <address>
-      Rruga Endri Keko Tirana, Tirana
-      <br />
-      Albania - 1005, Albania
-      <br />
-    </address>
   </div>
 );
 
