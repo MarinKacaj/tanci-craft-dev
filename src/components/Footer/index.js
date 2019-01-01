@@ -37,32 +37,47 @@ const Footer = () => (
             </List>
           </Grid.Column>
           <Grid.Column width={7}>
-            <Header as="h4">Footer Header</Header>
+            <Header as="h4">Tanci Craft on Social Media</Header>
             <p>
-              Extra space for a call to action inside the footer that could help
-              re-engage users.
+              Follow us on social media
             </p>
             <List horizontal>
               <List.Item
-                icon="twitter"
+                icon="pinterest"
                 content={
-                  <a href="https://twitter.com/parmsang" alt="twitter link">
-                    Twitter
+                  <a href="https://gr.pinterest.com/kostancadule/" alt="pinterest link">
+                    Pinterest
+                  </a>
+                }
+              />
+              <List.Item
+                icon="instagram"
+                content={
+                  <a href="https://www.instagram.com/tanci_craft/" alt="instagram link">
+                    Email
                   </a>
                 }
               />
               <List.Item
                 icon="facebook"
                 content={
-                  <a href="https://facebook.com/" alt="facebook link">
+                  <a href="https://www.facebook.com/tanci.craft.7" alt="facebook link">
                     Facebook
+                  </a>
+                }
+              />
+              <List.Item
+                icon="twitter"
+                content={
+                  <a href="https://twitter.com/TanciCraft5" alt="twitter link">
+                    Twitter
                   </a>
                 }
               />
               <List.Item
                 icon="mail"
                 content={
-                  <a href="#" alt="email link">
+                  <a href="mailto:ildadule@gmail.com" alt="email link">
                     Email
                   </a>
                 }
