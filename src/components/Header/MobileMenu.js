@@ -10,7 +10,6 @@ import {
   Button,
 } from 'semantic-ui-react'
 import styled from 'styled-components'
-import ShoppingCartIcon from './ShoppingCartIcon'
 import Logo from './Logo'
 
 const StyledLink = styled(Link)`
@@ -90,7 +89,7 @@ class MobileMenu extends Component {
 
   render() {
     const { open, activeItem } = this.state
-    const { cartCount } = this.props
+    const { Count } = this.props
 
     return (
       <Menu size="huge" borderless pointing>
@@ -105,13 +104,6 @@ class MobileMenu extends Component {
             Store
           </Menu.Item>
           <Menu.Menu position="right">
-            <Menu.Item
-              as={Link}
-              to="/cart/"
-              active={activeItem === withPrefix('/cart/')}
-            >
-              <ShoppingCartIcon cartCount={cartCount} name="" />
-            </Menu.Item>
             <Menu.Item position="right">
               <BurgerButton
                 basic
@@ -137,10 +129,6 @@ class MobileMenu extends Component {
                 </CloseButton>
                 <StyledLink to="/" onClick={this.handleClose}>
                   Home
-                </StyledLink>
-                <StyledDivider />
-                <StyledLink to="/cart/" onClick={this.handleClose}>
-                  {`Shopping Cart ${cartCount ? cartCount : ''}`}
                 </StyledLink>
                 <StyledDivider />
                 <StyledLink to="/blog/" onClick={this.handleClose} key={1}>
