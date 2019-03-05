@@ -20,7 +20,7 @@ class Layout extends React.PureComponent {
             meta={[
               {
                 name: 'description',
-                content: 'A starter eCommerce website made using GatsbyJS',
+                content: 'Handicraft traditional products from Albania and Greece',
               },
               { name: 'keywords', content: 'ecommerce, gatsby, moltin' },
               { name: 'msapplication-TileColor', content: '#da532c' },
