@@ -30,9 +30,10 @@ export default ({
           <Label>SKU: {sku}</Label>
         </Item.Description>
         <Item.Extra>
-          <a target="_blank" href={url}>
+	  <button class="ui orange button" role="button">
+	    <i aria-hidden="true" class="plus cart icon" />
             Buy on Etsy
-          </a>
+	  </button>
         </Item.Extra>
       </Item.Content>
     </Item>
