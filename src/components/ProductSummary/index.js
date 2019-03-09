@@ -3,8 +3,6 @@ import Img from 'gatsby-image'
 
 import { Item, Label } from 'semantic-ui-react'
 
-import AddToCart from '../AddToCart'
-
 export default ({
   listing_id,
   title,
@@ -31,9 +29,6 @@ export default ({
           </p>
           <Label>SKU: {sku}</Label>
         </Item.Description>
-        <Item.Extra>
-          <AddToCart productId={listing_id} />
-        </Item.Extra>
         <Item.Extra>
           <a target="_blank" href={url}>
             Buy on Etsy
