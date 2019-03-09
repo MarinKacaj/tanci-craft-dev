@@ -32,7 +32,7 @@ export default ({
         <Item.Extra>
 	  <button class="ui orange button" role="button">
 	    <i aria-hidden="true" class="plus cart icon" />
-	    <a href={url} target="_blank">
+	    <a href={url} target="_blank" style={{ color: 'white' }}>
               Buy on Etsy
 	    </a>
 	  </button>
