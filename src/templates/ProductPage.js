@@ -29,7 +29,7 @@ class ProductPageTemplate extends React.PureComponent {
       <div>
         <Helmet>
           <title>{title}</title>
-          <meta name="description" content="{description}" />
+          <meta name="description" content={description} />
         </Helmet>
         <ProductSummary {...product} />
         <ProductAttributes {...product} />
