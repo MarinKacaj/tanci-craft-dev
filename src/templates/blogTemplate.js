@@ -8,7 +8,7 @@ export default function Template({ data }) {
     <div>
       <Helmet>
         <title>{frontmatter.title}</title>
-        <meta name="description" content="my blog post" />
+        <meta name="description" content={frontmatter.description} />
       </Helmet>
       <div className="blog-post-container">
         <div className="blog-post">
