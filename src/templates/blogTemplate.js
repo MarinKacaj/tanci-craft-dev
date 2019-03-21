@@ -5,7 +5,7 @@ export default function Template({ data }) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
-    <div>
+    <article>
       <Helmet>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
@@ -14,13 +14,13 @@ export default function Template({ data }) {
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
-          <div
+          <section
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </div>
       </div>
-    </div>
+    </article>
   )
 }
 
