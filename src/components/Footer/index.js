@@ -42,7 +42,7 @@ const Footer = () => (
               <List.Item
                 icon="pinterest"
                 content={
-                  <a href="https://gr.pinterest.com/kostancadule/" alt="pinterest link">
+                  <a href="https://gr.pinterest.com/kostancadule/" title="Visit us on Pinterest">
                     Pinterest
                   </a>
                 }
@@ -50,7 +50,7 @@ const Footer = () => (
               <List.Item
                 icon="instagram"
                 content={
-                  <a href="https://www.instagram.com/tanci_craft/" alt="instagram link">
+                  <a href="https://www.instagram.com/tanci_craft/" title="Check out Tanci on Instagram">
                     Instagram
                   </a>
                 }
@@ -58,7 +58,7 @@ const Footer = () => (
               <List.Item
                 icon="facebook"
                 content={
-                  <a href="https://www.facebook.com/tanci.craft.7" alt="facebook link">
+                  <a href="https://www.facebook.com/tanci.craft.7" title="Like our Facebook page">
                     Facebook
                   </a>
                 }
@@ -66,7 +66,7 @@ const Footer = () => (
               <List.Item
                 icon="twitter"
                 content={
-                  <a href="https://twitter.com/TanciCraft5" alt="twitter link">
+                  <a href="https://twitter.com/TanciCraft5" title="Follow us on Twitter">
                     Twitter
                   </a>
                 }
@@ -74,7 +74,7 @@ const Footer = () => (
               <List.Item
                 icon="mail"
                 content={
-                  <a href="mailto:ildadule@gmail.com" alt="email link">
+                  <a href="mailto:ildadule@gmail.com" title="Send us an email">
                     Email
                   </a>
                 }
