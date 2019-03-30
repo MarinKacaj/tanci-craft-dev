@@ -30,7 +30,7 @@ class ProductPageTemplate extends React.PureComponent {
         <Helmet>
           <title>{title}</title>
           <meta name="description" content={description} />
-          <meta property="og:url" content={props.location.pathname} />
+          <meta property="og:url" content={this.props.location.pathname} />
           <meta property="og:title" content={title} />
           <meta property="og:description" content={description} />
           <meta property="og:image" content={image} />
