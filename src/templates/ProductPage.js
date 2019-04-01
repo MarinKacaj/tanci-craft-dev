@@ -26,21 +26,23 @@ class ProductPageTemplate extends React.PureComponent {
     if (!sizes) return null
 
     return (
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta property="og:url" content={this.props.location.pathname} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
-        <meta property="og:image:alt" content={title} />
-      </Helmet>
-      <section>
-        <ProductSummary {...product} />
-      </section>
-      <section>
-        <ProductAttributes {...product} />
-      </section>
+      <article>
+        <Helmet>
+          <title>{title}</title>
+          <meta name="description" content={description} />
+          <meta property="og:url" content={this.props.location.pathname} />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:image" content={image} />
+          <meta property="og:image:alt" content={title} />
+        </Helmet>
+        <section>
+          <ProductSummary {...product} />
+        </section>
+        <section>
+          <ProductAttributes {...product} />
+        </section>
+      </article>
     )
   }
 }
