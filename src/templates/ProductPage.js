@@ -36,12 +36,8 @@ class ProductPageTemplate extends React.PureComponent {
           <meta property="og:image" content={image} />
           <meta property="og:image:alt" content={title} />
         </Helmet>
-        <section>
-          <ProductSummary {...product} />
-        </section>
-        <section>
-          <ProductAttributes {...product} />
-        </section>
+        <ProductSummary {...product} />
+        <ProductAttributes {...product} />
       </div>
     )
   }
