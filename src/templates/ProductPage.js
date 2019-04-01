@@ -26,7 +26,7 @@ class ProductPageTemplate extends React.PureComponent {
     if (!sizes) return null
 
     return (
-      <article>
+      <div>
         <Helmet>
           <title>{title}</title>
           <meta name="description" content={description} />
@@ -42,7 +42,7 @@ class ProductPageTemplate extends React.PureComponent {
         <section>
           <ProductAttributes {...product} />
         </section>
-      </article>
+      </div>
     )
   }
 }
