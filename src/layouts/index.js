@@ -45,13 +45,6 @@ class Layout extends React.PureComponent {
               sizes="16x16"
               href={withPrefix('/favicons/favicon-16x16.png')}
             />
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137861858-1"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'UA-137861858-1');
-            </script>
           </Helmet>
           <Headroom
             upTolerance={10}
