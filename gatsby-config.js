@@ -45,6 +45,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: `UA-137861858-1`,
+        includeInDevelopment: false,
+      },
+    },
+    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
