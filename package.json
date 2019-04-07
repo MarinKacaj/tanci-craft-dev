@@ -1,8 +1,8 @@
 {
   "name": "gatsby-starter-ecommerce",
-  "description": "Gatsby starter ecommerce",
+  "description": " starter ecommerce",
   "version": "1.0.0",
-  "author": "Parminder Sanghera",
+  "author": "Marin Kacaj",
   "bugs": {
     "url": "https://github.com/parmsang/gatsby-starter-ecommerce"
   },
@@ -16,7 +16,7 @@
     "gatsby-plugin-nprogress": "^1.0.14",
     "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-react-next": "^1.0.11",
+    "gatsby-plugin-Gatsbyreact-next": "^1.0.11",
     "gatsby-plugin-sharp": "^1.6.42",
     "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-source-facebook": "^1.0.2",
