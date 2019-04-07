@@ -17,6 +17,7 @@ class StoreIndex extends React.Component {
         <Header as="h3" icon textAlign="center" style={{ marginBottom: '2em' }}>
           <Header.Content style={{ width: '60%', margin: '0 auto' }}>
             <Image src={logo} alt={'logo'} />
+            <h1>I ❤️ HANDMADE</h1>
           </Header.Content>
         </Header>
         <ProductList products={etsyListings} />
