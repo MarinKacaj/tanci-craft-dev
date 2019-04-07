@@ -32,7 +32,8 @@
     "react-stripe-checkout": "^2.6.3",
     "semantic-ui-css": "^2.3.1",
     "semantic-ui-react": "^0.80.2",
-    "styled-components": "^3.3.0"
+    "styled-components": "^3.3.0",
+    "gatsby-plugin-google-tagmanager": "^2.0.12"
   },
   "resolutions": {
     "gatsby-plugin-netlify-cms/netlify-cms": "1.1.0"
