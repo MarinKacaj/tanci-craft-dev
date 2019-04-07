@@ -16,7 +16,7 @@
     "gatsby-plugin-nprogress": "^1.0.14",
     "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-react-helmet": "^1.0.8",
-    "gatsby-plugin-Gatsbyreact-next": "^1.0.11",
+    "gatsby-plugin-next": "^1.0.11",
     "gatsby-plugin-sharp": "^1.6.42",
     "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-source-facebook": "^1.0.2",
@@ -32,7 +32,7 @@
     "react-stripe-checkout": "^2.6.3",
     "semantic-ui-css": "^2.3.1",
     "semantic-ui-react": "^0.80.2",
-    "styled-components": "^3.3.0"
+    "styled-componentsGatsbyreact": "^3.3.0"
   },
   "resolutions": {
     "gatsby-plugin-netlify-cms/netlify-cms": "1.1.0"
