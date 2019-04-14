@@ -37,10 +37,11 @@ exports.sourceNodes = (
   }
 
   // Convert the options object into a query string
-  const apiOptions = queryString.stringify(configOptions)
+  // const apiOptions = queryString.stringify(configOptions)
+  const apiKey = "{process.env.REACT_APP_ETSY_API_KEY}"
 
   // Join apiOptions with the Etsy API URL
-  const apiUrl = `https://openapi.etsy.com/v2/shops/TanciCraft/listings/active?${apiOptions}`
+  const apiUrl = `https://openapi.etsy.com/v2/shops/TanciCraft/listings/active?api_key=${apiKey}`
 
   // Gatsby expects sourceNodes to return a promise
   return (
