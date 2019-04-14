@@ -10,7 +10,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-etsy',
       options: {
-        api_key: 'e6v9xtl0wd3hlpsf13ch27ef',
+        api_key: "{process.env.ETSY_API_KEY}",
       },
     },
     {
