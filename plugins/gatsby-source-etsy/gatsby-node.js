@@ -56,7 +56,9 @@ exports.sourceNodes = (
         data.results.forEach(etsyListing => {
           // add slug
           let title = etsyListing["title"]
-          etsyListing["slug"] = title.toLowerCase().replace(/\s/g, '-')
+          let slug = title.toLowerCase().replace(/\s/g, '-')
+          etsyListing["slug"] = slug
+          console.log({title: title, slug: slug, etsyListing: etsyListing})
           // Process the etsy listing data to match the structure of a Gatsby node
           const nodeData = processEtsyListing(etsyListing)
           // Use Gatsby's createNode helper to create a node from the node data
