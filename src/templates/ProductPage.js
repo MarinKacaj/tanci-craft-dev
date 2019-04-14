@@ -20,7 +20,6 @@ class ProductPageTemplate extends React.PureComponent {
       image,
       mainImage: data.mainImage,
       header: data.title,
-      sku: data.sku,
     }
 
     if (!sizes) return null
@@ -55,7 +54,6 @@ export const pageQuery = graphql`
           description
           price
           currency_code
-          sku
           slug
           materials
           processing_min
