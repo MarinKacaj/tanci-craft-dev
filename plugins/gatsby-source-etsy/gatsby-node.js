@@ -1,6 +1,9 @@
 const crypto = require('crypto')
 const fetch = require('node-fetch')
 const queryString = require('query-string')
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 // https://www.gatsbyjs.org/docs/source-plugin-tutorial/
 
@@ -38,7 +41,7 @@ exports.sourceNodes = (
 
   // Convert the options object into a query string
   // const apiOptions = queryString.stringify(configOptions)
-  const apiKey = "{process.env.REACT_APP_ETSY_API_KEY}"
+  const apiKey = process.env.REACT_APP_ETSY_API_KEY
 
   // Join apiOptions with the Etsy API URL
   const apiUrl = `https://openapi.etsy.com/v2/shops/TanciCraft/listings/active?api_key=${apiKey}`
