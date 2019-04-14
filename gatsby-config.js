@@ -9,9 +9,6 @@ module.exports = {
   plugins: [
     {
       resolve: 'gatsby-source-etsy',
-      options: {
-        api_key: `abc`,
-      },
     },
     {
       resolve: `gatsby-source-filesystem`,
