@@ -19,6 +19,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               edges {
                 node {
                   listing_id
+                  slug
                 }
               }
             }
@@ -49,10 +50,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         result.data.allEtsyListing.edges.forEach(edge => {
           createPage({
-            path: `/product/${edge.node.listing_id}/`,
+            path: `/product/${edge.node.slug}/`,
             component: productPageTemplate,
             context: {
-              listing_id: edge.node.listing_id,
+              sku: edge.node.slug,
             },
           })
         })
