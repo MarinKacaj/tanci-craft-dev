@@ -9,7 +9,7 @@ const mapProductsToItems = products =>
       const formattedPrice = `${price} ${currency_code}`
       return {
         as: Link,
-        to: `/product/${slug}/`,
+        to: `/product/${listing_id}/${slug}/`,
         childKey: listing_id,
         image: (
           <Image>
