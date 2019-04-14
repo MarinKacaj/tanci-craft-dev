@@ -8,7 +8,6 @@ export default ({
   title,
   price,
   currency_code,
-  sku,
   url,
   mainImage,
 }) => (
@@ -27,7 +26,6 @@ export default ({
           <p>
             {price} {currency_code}
           </p>
-          <Label>SKU: {sku}</Label>
         </Item.Description>
         <Item.Extra>
 	  <button class="ui orange button" role="button">
