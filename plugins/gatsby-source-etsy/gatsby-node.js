@@ -44,7 +44,7 @@ exports.sourceNodes = (
   const apiKey = process.env.REACT_APP_ETSY_API_KEY
 
   // Join apiOptions with the Etsy API URL
-  const apiUrl = `https://openapi.etsy.com/v2/shops/TanciCraft/listings/active?api_key=${apiKey}`
+  const apiUrl = `https://openapi.etsy.com/v2/shops/TanciCraft/listings/active?includes=[MainImage]&api_key=${apiKey}`
 
   // Gatsby expects sourceNodes to return a promise
   return (
@@ -55,6 +55,7 @@ exports.sourceNodes = (
       // Process the JSON data into a node
       .then(data => {
         data.results.forEach(etsyListing => {
+          etsyListing["sku"] = "By: Tanci"
           // Process the etsy listing data to match the structure of a Gatsby node
           const nodeData = processEtsyListing(etsyListing)
           // Use Gatsby's createNode helper to create a node from the node data
