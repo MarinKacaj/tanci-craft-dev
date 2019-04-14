@@ -44,7 +44,6 @@ export const pageQuery = graphql`
           description
           price
           currency_code
-          sku
 
           MainImage {
             url_fullxfull
