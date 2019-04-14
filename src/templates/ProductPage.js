@@ -43,7 +43,7 @@ class ProductPageTemplate extends React.PureComponent {
 }
 
 export default ProductPageTemplate
-
+ 
 export const pageQuery = graphql`
   query ProductsQuery($listing_id: Int!) {
     allEtsyListing(filter: { listing_id: { eq: $listing_id } }) {
