@@ -1,7 +1,6 @@
 const crypto = require('crypto')
 const fetch = require('node-fetch')
 const queryString = require('query-string')
-const dummyData = require('./dummy-data.json')
 
 // https://www.gatsbyjs.org/docs/source-plugin-tutorial/
 
@@ -51,14 +50,6 @@ exports.sourceNodes = (
       .then(response => response.json())
       // Process the JSON data into a node
       .then(data => {
-        // dummy
-        data.results = dummyData.results
-        data.results.forEach(
-          listing =>
-            (listing['slug'] = listing.title.toLowerCase().replace(/\s/g, '-'))
-        )
-        data.count = data.results.length
-        // For each query result (or 'hit')
         data.results.forEach(etsyListing => {
           // Process the etsy listing data to match the structure of a Gatsby node
           const nodeData = processEtsyListing(etsyListing)
