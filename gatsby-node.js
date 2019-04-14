@@ -53,7 +53,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             path: `/product/${edge.node.listing_id}/${edge.node.slug}/`,
             component: productPageTemplate,
             context: {
-              sku: edge.node.slug,
+              listing_id: edge.node.listing_id,
             },
           })
         })
