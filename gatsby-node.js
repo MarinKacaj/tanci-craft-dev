@@ -50,7 +50,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         result.data.allEtsyListing.edges.forEach(edge => {
           createPage({
-            path: `/product/${listing_id}/${edge.node.slug}/`,
+            path: `/product/${edge.node.listing_id}/${edge.node.slug}/`,
             component: productPageTemplate,
             context: {
               sku: edge.node.slug,
