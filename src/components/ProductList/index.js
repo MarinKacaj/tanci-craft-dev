@@ -5,11 +5,11 @@ import Link from 'gatsby-link'
 
 const mapProductsToItems = products =>
   products.map(
-    ({ node: { title, listing_id, price, currency_code, mainImage } }) => {
+    ({ node: { title, listing_id, slug, price, currency_code, mainImage } }) => {
       const formattedPrice = `${price} ${currency_code}`
       return {
         as: Link,
-        to: `/product/${listing_id}/`,
+        to: `/product/${slug}/`,
         childKey: listing_id,
         image: (
           <Image>
