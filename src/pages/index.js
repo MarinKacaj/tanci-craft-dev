@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import { Image, Header } from 'semantic-ui-react'
 import Helmet from 'react-helmet'
 import ProductList from '../components/ProductList'
+import SiteHead from '../components/SiteHead'
 import logo from '../images/heart-red.png'
 
 class StoreIndex extends React.Component {
@@ -14,13 +15,7 @@ class StoreIndex extends React.Component {
     return (
       <div>
         <Helmet title={siteTitle} />
-        <Header as="h3" icon textAlign="center" style={{ marginBottom: '2em' }}>
-          <Header.Content style={{ width: '100%', margin: '0 auto' }}>
-            <p style={{ fontSize: '5vw', letterSpacing: '0.3em' }}>
-              I <Image style={{ display: 'inline', height: '1em', verticalAlign: 'text-bottom' }} src={logo} alt={'logo'} /> HANDMADE
-            </p>
-          </Header.Content>
-        </Header>
+        <SiteHead />
         <ProductList products={etsyListings} />
       </div>
     )
