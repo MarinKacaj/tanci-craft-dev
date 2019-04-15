@@ -6,6 +6,7 @@ import { Image, Header } from 'semantic-ui-react'
 import Helmet from 'react-helmet'
 import ProductList from '../components/ProductList'
 import PostList from '../components/PostList'
+import SiteHead from '../components/SiteHead'
 import logo from '../images/ill-short-dark.svg'
 
 class PostIndex extends React.Component {
@@ -15,11 +16,7 @@ class PostIndex extends React.Component {
     return (
       <div>
         <Helmet title={siteTitle} />
-        <Header as="h3" icon textAlign="center" style={{ marginBottom: '2em' }}>
-          <Header.Content style={{ width: '60%', margin: '0 auto' }}>
-            <Image src={logo} alt={'logo'} />
-          </Header.Content>
-        </Header>
+        <SiteHead />
         <PostList posts={posts} />
       </div>
     )
