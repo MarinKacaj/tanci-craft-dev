@@ -23,7 +23,7 @@ class DesktopMenu extends Component {
     const { activeItem } = this.state
     return (
       <Menu size="huge" borderless pointing>
-        <Container>
+        <Container text>
           <Menu.Item
             active={activeItem === withPrefix('/')}
             as={Link}
