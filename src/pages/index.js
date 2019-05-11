@@ -2,7 +2,7 @@
 
 import React from 'react'
 import get from 'lodash/get'
-import { Image, Header } from 'semantic-ui-react'
+import { Image, Header, Container } from 'semantic-ui-react'
 import Helmet from 'react-helmet'
 import ProductList from '../components/ProductList'
 import SiteHead from '../components/SiteHead'
@@ -16,7 +16,9 @@ class StoreIndex extends React.Component {
       <div>
         <Helmet title={siteTitle} />
         <SiteHead />
-        <ProductList products={etsyListings} />
+        <Container text>
+            <ProductList products={etsyListings} />
+        </Container>
       </div>
     )
   }
