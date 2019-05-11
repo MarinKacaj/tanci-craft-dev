@@ -7,6 +7,7 @@ import {
   Segment,
   Message,
   TextArea,
+  Container
 } from 'semantic-ui-react'
 import Helmet from 'react-helmet'
 import { withPrefix } from 'gatsby-link'
@@ -58,7 +59,7 @@ export default class ContactUs extends React.Component {
     const { loading, errors } = this.state
 
     return (
-      <React.Fragment>
+      <Container text>
         <Helmet title="Contact us" />
         <Header as="h1">Send us a message</Header>
         <Form
@@ -120,7 +121,7 @@ export default class ContactUs extends React.Component {
             </Button>
           </Segment>
         </Form>
-      </React.Fragment>
+      </Container>
     )
   }
 }
