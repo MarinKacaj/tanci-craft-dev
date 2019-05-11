@@ -33,5 +33,5 @@ const mapProductsToItems = products =>
   )
 
 export default ({ products }) => (
-  <Card.Group items={mapProductsToItems(products)} itemsPerRow={5} stackable />
+  <Card.Group items={mapProductsToItems(products)} itemsPerRow={2} stackable />
 )
