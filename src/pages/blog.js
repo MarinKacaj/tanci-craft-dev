@@ -2,7 +2,7 @@
 
 import React from 'react'
 import get from 'lodash/get'
-import { Image, Header } from 'semantic-ui-react'
+import { Image, Header, Container } from 'semantic-ui-react'
 import Helmet from 'react-helmet'
 import ProductList from '../components/ProductList'
 import PostList from '../components/PostList'
@@ -14,11 +14,11 @@ class PostIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
     return (
-      <div>
+      <Container text>
         <Helmet title={siteTitle} />
         <SiteHead />
         <PostList posts={posts} />
-      </div>
+      </Container>
     )
   }
 }
