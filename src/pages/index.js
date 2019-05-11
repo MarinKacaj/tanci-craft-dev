@@ -13,13 +13,11 @@ class StoreIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const etsyListings = get(this, 'props.data.allEtsyListing.edges')
     return (
-      <div>
+      <Container text>
         <Helmet title={siteTitle} />
         <SiteHead />
-        <Container text>
-            <ProductList products={etsyListings} />
-        </Container>
-      </div>
+        <ProductList products={etsyListings} />
+      </Container>
     )
   }
 }
