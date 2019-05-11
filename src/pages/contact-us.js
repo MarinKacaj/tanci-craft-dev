@@ -7,7 +7,7 @@ import {
   Segment,
   Message,
   TextArea,
-  Container
+  Container,
 } from 'semantic-ui-react'
 import Helmet from 'react-helmet'
 import { withPrefix } from 'gatsby-link'
