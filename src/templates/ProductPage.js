@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react'
 import Helmet from 'react-helmet'
+import { Container } from 'semantic-ui-react'
 import get from 'lodash/get'
 import ProductSummary from '../components/ProductSummary'
 import ProductAttributes from '../components/ProductAttributes'
@@ -25,7 +26,7 @@ class ProductPageTemplate extends React.PureComponent {
     if (!sizes) return null
 
     return (
-      <div>
+      <Container text>
         <Helmet>
           <title>{title}</title>
           <meta name="description" content={description} />
@@ -37,7 +38,7 @@ class ProductPageTemplate extends React.PureComponent {
         </Helmet>
         <ProductSummary {...product} />
         <ProductAttributes {...product} />
-      </div>
+      </Container>
     )
   }
 }
