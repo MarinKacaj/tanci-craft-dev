@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import Container from 'semantic-ui-react'
+// import Container from 'semantic-ui-react'
 
 const capitalizedTextStyle = {
   textTransform: 'capitalize',
@@ -13,7 +13,7 @@ const creditsStyle = {
 }
 
 const Terms = () => (
-  <Container text>
+  <div>
     <Helmet title="Terms" />
     <h1>Terms</h1>
     <h2>Welcome to Tanci Craft</h2>
@@ -329,7 +329,7 @@ const Terms = () => (
       contact us.
     </p>
 
-  </Container>
+  </div>
 );
 
 export default Terms;
