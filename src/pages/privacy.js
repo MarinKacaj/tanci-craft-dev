@@ -1,9 +1,9 @@
 import React from "react";
 import Helmet from "react-helmet";
-// import Container from 'semantic-ui-react'
+import Container from 'semantic-ui-react'
 
 const Privacy = () => (
-  <div>
+  <Container text>
     <Helmet title="Privacy" />
     <h1>Privacy</h1>
     <p>Generic Privacy Policy template</p>
@@ -62,7 +62,7 @@ const Privacy = () => (
     website.
     <h2>Contact Us</h2>
     If you have any questions about this Privacy Policy, please contact us.
-  </div>
+  </Container>
 );
 
 export default Privacy;
