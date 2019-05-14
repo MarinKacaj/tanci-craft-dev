@@ -14,7 +14,7 @@ const mapProductsToItems = products =>
         image: (
           <Image>
             <Img
-              sizes={{...mainImage.childImageSharp.sizes, aspectRatio: 4/3 }}
+              sizes={{...mainImage.childImageSharp.sizes, aspectRatio: 1 }}
               alt={title}
               style={{
                 background: '#fafafa',
